@@ -1,0 +1,7 @@
+{
+  "name": "playToKeys",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
