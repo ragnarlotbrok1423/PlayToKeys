@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
- 
+
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'inicio',
     pathMatch: 'full',
   },
   {
@@ -15,5 +15,15 @@ export const routes: Routes = [
     path: 'shared',
     loadChildren: () => import('./shared/shared.module').then( m => m.SharedModule)
   },
+  {
+    path: 'loggin',
+    loadComponent: () => import('./features/loggin/loggin.page').then( m => m.LogginPage)
+  },  {
+    path: 'inicio',
+    loadComponent: () => import('./features/inicio/inicio.page').then( m => m.InicioPage)
+  },
+
  
+
+
 ];
