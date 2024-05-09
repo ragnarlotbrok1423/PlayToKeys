@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "app",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ],
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "y"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
