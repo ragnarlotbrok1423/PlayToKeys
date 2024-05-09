@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { LogginFormComponent } from './loggin-form.component';
+import { ButtonComponent } from './button.component';
 
-describe('LogginFormComponent', () => {
-  let component: LogginFormComponent;
-  let fixture: ComponentFixture<LogginFormComponent>;
+describe('ButtonComponent', () => {
+  let component: ButtonComponent;
+  let fixture: ComponentFixture<ButtonComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [LogginFormComponent],
+      imports: [ButtonComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LogginFormComponent);
+    fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

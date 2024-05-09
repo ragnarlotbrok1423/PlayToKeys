@@ -1,0 +1,67 @@
+body {
+    background-color: #33312E; 
+  }
+  
+  h3 {
+    position: absolute;
+    font-weight: bold;
+    left:36px;
+    top: 380px;
+    border-radius: 10px;
+    padding: 10px;
+    width: calc(100% - 40px);
+    text-align: left;
+    color: white;
+    right: 60px;
+     }
+  
+  .BotonIniciar .custom-button {
+    position: absolute;
+    width: 320px;
+    height: 70px;
+    left: 0px;
+    top: 736px;
+    background: #EB5E28;
+    border-radius: 15px;
+  }
+  
+  .BotonR .custom-button {
+    position: absolute;
+    width: 300px;
+    height: 70px;
+    left: 130px;
+    top: 635px;
+    background: #FFFFFF;
+    border-radius:15px;
+  }
+  
+  .div-lRegistrar {
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  .div-lIniciar {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .linea-blanca {
+    position: absolute; 
+    left: 40px; 
+    top: 480px; 
+    width: 340px; 
+    border-bottom: 5px solid #ffffff;
+  }
+  
+  img {
+    position: absolute;
+    top: 330px;
+    left: 215px;
+    transform: translate(-50%, -50%);
+    width: 350px; 
+    height: auto; 
+  }
+  

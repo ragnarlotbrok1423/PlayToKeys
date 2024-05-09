@@ -1,0 +1,91 @@
+
+.nombre {
+  position: absolute;
+  width: 221px;
+  height: 30px;
+  left: 80px;
+  top: 165px; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 19px;
+  color: #33312E;
+  margin-bottom: 50px; 
+}
+
+.apellido {
+  position: absolute;
+  width: 222px;
+  height: 31px;
+  left: 80px;
+  top: 270px; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 19px;
+  color: #33312E;
+  margin-bottom: 50px; 
+}
+
+.codigo-postal {
+  position: absolute;
+  width: 213px;
+  height: 30px;
+  left: 80px;
+  top: 370px; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 19px;
+  color: #33312E;
+  margin-bottom: 50px; 
+}
+
+.correo {
+  position: absolute;
+  width: 213px;
+  height: 30px;
+  left: 80px;
+  top: 478px; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 19px;
+  color: #33312E;
+  margin-bottom: 50px; 
+}
+
+.contraseña {
+  position: absolute;
+  width: 213px;
+  height: 30px;
+  left: 80px;
+  top: 590px; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 19px;
+  color: #33312E;
+  margin-bottom: 50px; 
+}
+
+body {
+  background-color: #33312E; 
+  margin: 0; 
+  padding: 0; 
+  font-family: Arial, sans-serif;
+}
+
+img {
+  position: absolute;
+  top: 85px;
+  left: 142px;
+  transform: translate(-50%, -50%);
+  width: 225px; 
+  height: auto; 
+}

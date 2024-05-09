@@ -1,0 +1,77 @@
+/* Estilos para el contenedor principal del formulario */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+}
+
+.textbox {
+  box-sizing: border-box;
+  size: 16px ;
+  width: 100%; 
+  height: 40px;
+  border-width: 1px 1px 3px 3px;
+  border-style: solid;
+  border-color: #000000;
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  font-weight: bold; 
+  margin-bottom: 20px; 
+}
+
+
+
+/* Aplicar estilos específicos a cada tipo de textbox */
+.nombre-textbox {
+  box-sizing: border-box;
+  width: 275px;
+  left:100px;
+  height: 60px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 215px;
+
+}
+
+.apellido-textbox {
+  box-sizing: border-box;
+  width: 270px;
+  left:100px;
+  height: 60px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 320px;
+}
+
+.codigo-postal-textbox {
+  box-sizing: border-box;
+  width: 270px;
+  left:100px;
+  height: 60px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 430px;
+}
+
+.correo-textbox {
+  box-sizing: border-box;
+  width: 270px;
+  left:100px;
+  height: 60px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 535px;
+}
+
+.contraseña-textbox {
+  box-sizing: border-box;
+  width: 270px;
+  left:100px;
+  height: 60px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 645px;
+}
