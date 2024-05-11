@@ -1,0 +1,97 @@
+<div>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>tu carrito de compra </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <!-- Primera columna -->
+          <ion-col size="4" class="image-icon-container">
+            <!-- Contenido de la primera columna -->
+            <img src="/assets/Img/need.png" class="card-image-icon"/>
+          </ion-col>
+          
+          <!-- Segunda columna -->
+          <ion-col size="8">
+            <!-- Contenido de la segunda columna -->
+            <ion-card-header>
+              <ion-row>
+                <ion-card-title>Need for Speeds</ion-card-title>
+              </ion-row>
+              <ion-row>
+                <ion-card-subtitle>Carreras/Aventuras</ion-card-subtitle>
+              </ion-row>
+            </ion-card-header>
+        
+            <ion-card-content>
+             60.00$
+            </ion-card-content>
+            <div class="button-container">
+              <ion-button class="custom-button" fill="clear">Agregar</ion-button>
+              <ion-button class="custom-button" fill="clear" (click)="presentAlert()">Quitar Producto</ion-button>            
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  
+  
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <!-- Primera columna -->
+          <ion-col size="4" class="image-icon-container">
+            <!-- Contenido de la primera columna -->
+            <img src="/assets/Img/fc24.png" class="card-image-icon"/>
+          </ion-col>
+          
+          <!-- Segunda columna -->
+          <ion-col size="8">
+            <!-- Contenido de la segunda columna -->
+            <ion-card-header>
+              <ion-row>
+                <ion-card-title>EA SPORTS™ FC 24</ion-card-title>
+              </ion-row>
+              <ion-row>
+                <ion-card-subtitle>Deportes/Fútbol</ion-card-subtitle>
+              </ion-row>
+            </ion-card-header>
+            <ion-card-content>
+              60.00$
+            </ion-card-content>
+            <div class="button-container">
+              <ion-button class="custom-button" fill="clear">Agregar</ion-button>
+              <ion-button class="custom-button" fill="clear" (click)="presentAlert()">Quitar Producto</ion-button>
+            </div>            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-content>
+    <!-- Botón para comprar -->
+    <ion-button expand="full" (click)="comprar()" class="boton-comprar">
+      Comprar
+    </ion-button>
+    <label class="label-total">Total: $120.00</label>
+  </ion-content>
+
+
+  <ion-content>
+    <!-- Botón para ir al menu -->
+    <ion-button expand="full" (click)="Menu()" class="Menu-ir">
+      Ir al Menu
+    </ion-button>
+  </ion-content>
+
+</div>

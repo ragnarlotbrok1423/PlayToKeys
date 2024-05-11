@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'registrar',
     pathMatch: 'full',
   },
   {
@@ -34,4 +34,12 @@ export const routes: Routes = [
         (m) => m.RegistrarPage
       ),
   },
+  {
+    path:'carrito',
+    loadComponent: () =>
+      import('./features/carrito/carrito.page').then(
+        (m) => m.CarritoPage
+      ),
+  },
+
 ];

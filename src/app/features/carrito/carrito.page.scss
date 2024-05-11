@@ -1,0 +1,99 @@
+:host{
+  background-color: #868179;
+}
+
+ion-content {
+  --background: #868179; // Cambia el color de fondo de la página
+}
+ 
+
+ion-card-title {
+  font-size: 0.8rem;
+  --color: #eeeeee;
+  margin: 2px;
+}
+
+.card-image-icon {
+  border-radius: 5px;
+}
+
+ion-card-subtitle {
+  font-size: 0.6rem;
+  --color: #eeeeee;
+  margin: 2px;
+}
+
+ion-card-content {
+  font-size: 0.5rem;
+  --color: #eeeeee;
+  margin: 2px;
+}
+
+
+.image-icon-container {
+  display: grid;
+  place-items: center;
+}
+
+ion-card {
+  --background: #33312E;
+  --color: #eeeeee;
+  margin: 6px;
+}
+
+ion-card-content {
+  margin: 2px;
+  padding: 2px;
+}
+
+ion-card-header {
+  padding: 2px;
+}
+
+.boton-comprar {
+  --background: #FF7F11; /* Color de fondo */
+  color: #FFFFFF; /* Color del texto */
+  position: fixed;
+  bottom: 150px; /* Distancia desde la parte inferior */
+  right: 20px; /* Distancia desde el lado derecho */
+  border-radius: 10px; /* Borde redondeado */
+}
+
+.label-total {
+  position: fixed;
+  left: 20px; /* Ajusta esta cantidad según tu preferencia */
+  bottom: 150px; /* Ajusta esta cantidad según tu preferencia */
+  color: #000000; /* Color blanco para el texto */
+}
+
+.Menu-ir {
+  --background: #FF7F11; /* Color de fondo */
+  color: #FFFFFF; /* Color del texto */
+  position: fixed;
+  bottom: 235px; /* Distancia desde la parte inferior */
+  left: 20px; /* Distancia desde el lado derecho */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-button {
+  flex: 1;
+  max-width: 45%;
+ 
+}
+
+.custom-button.custom-button {
+  color: #FFFFFF; // Color de texto
+  --background: #EB5E28; // Color de fondo
+}
+

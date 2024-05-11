@@ -1,26 +1,2 @@
-<div class="form-container">
-  <div class="nombre-textbox">
-    <label class="label" for="nombreInput"></label>
-    <input class="textbox" type="text" id="nombreInput">
-  </div>
-
-  <div class="apellido-textbox">
-    <label class="label" for="apellidoInput"></label>
-    <input class="textbox" type="text" id="apellidoInput">
-  </div>
-
-  <div class="codigo-postal-textbox">
-    <label class="label" for="codigoPostalInput"></label>
-    <input class="textbox" type="text" id="codigoPostalInput">
-  </div>
-
-  <div class="correo-textbox">
-    <label class="label" for="correoInput"></label>
-    <input class="textbox" type="text" id="correoInput">
-  </div>
-
-  <div class="contraseña-textbox">
-    <label class="label" for="contraseñaInput"></label>
-    <input class="textbox" type="text" id="contraseñaInput">
-  </div>
-</div>
+<input class="textbox mb-5 text-2xl" type="text" [value]="textValue"
+       (input)="onInputChange($event.target.value)" />
