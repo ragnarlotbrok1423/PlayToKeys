@@ -12,17 +12,19 @@ import {
   indexedDBLocalPersistence, browserPopupRedirectResolver,
   connectAuthEmulator
 } from "@angular/fire/auth";
-import { provideFirestore, initializeFirestore, connectFirestoreEmulator } from "@angular/fire/firestore";
+import { provideFirestore, initializeFirestore, connectFirestoreEmulator, getFirestore } from "@angular/fire/firestore";
 import { provideFunctions, getFunctions, connectFunctionsEmulator } from "@angular/fire/functions";
-import { provideMessaging, getMessaging } from "@angular/fire/messaging";
+
 import { providePerformance, getPerformance } from "@angular/fire/performance";
 import { provideStorage, getStorage, connectStorageEmulator } from "@angular/fire/storage";
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar'; //
 import {environment} from '../environments/environment';
 
+
 const useEmulators = environment.firebase;
 
 export const appConfig: ApplicationConfig = {
+
   providers: [
     provideRouter(routes),
     provideAnimations(),
@@ -37,15 +39,16 @@ export const appConfig: ApplicationConfig = {
           popupRedirectResolver: browserPopupRedirectResolver
         });
 
-        if (useEmulators) {
-          connectAuthEmulator(auth, 'https://localhost:9099', { disableWarnings: true });
+        if (location.hostname === "localhost:8080") {
+          connectAuthEmulator(auth, "http://127.0.0.1:9099");
         }
 
         return auth;
       }),
       provideFirestore(() => {
         const firestore = initializeFirestore(getApp(), {
-          experimentalForceLongPolling: !!useEmulators
+          experimentalForceLongPolling: useEmulators ? true : false
+
         });
 
         if (useEmulators) {
@@ -54,14 +57,17 @@ export const appConfig: ApplicationConfig = {
 
         return firestore;
       }),
+      provideFirestore(() => getFirestore()),
       provideFunctions(() => {
         const functions = getFunctions();
 
-        if (useEmulators) {                }
+        if (useEmulators) {
+          connectFunctionsEmulator(functions, 'localhost', 5001);
+        }
 
         return functions;
       }),
-      provideMessaging(() => getMessaging()), // not using emulators for messages
+       // not using emulators for messages
       providePerformance(() => getPerformance()), // not using emulators for checking app performance
       provideStorage(() => {
         const storage = getStorage();

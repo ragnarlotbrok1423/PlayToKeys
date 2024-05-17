@@ -7,9 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 
 })
 export class OrangeTextBoxComponent  implements OnInit {
-  
-  constructor() { }
+  @Input() type: string;
 
-  ngOnInit() {}
+  constructor() {
+
+  }
+
+  ngOnInit() {return 0}
 
 }

@@ -28,14 +28,22 @@
       <img src="../../../assets/playToKeyLogo.png" alt="logo" class="w-40" />
     </div>
     <div class="mt-16 OrangeContainer mr-5">
-      <div class="pt-12 ml-8"></div>
+      <div class="pt-12 ml-8">
+        <form [formGroup]="form">
+          <h1 class="font-inter font-semibold text-2xl mt-10">Correo</h1>
+          <input class="loginTextBox font-inter font-bold text-xl" type="email" formControlName="email">
+          <h1 class="font-inter font-semibold text-2xl mt-10">Contraseña</h1>
+          <input class="loginTextBox font-inter font-bold text-xl" type="password" formControlName="password">
+        </form >
+
+      </div>
       <p class="mt-24 ml-8 font-Inter font-semibold text-lg">
         ¿Olvidaste tu Contraseña? :V
       </p>
       <div class="mt-52 text-right">
-        <button class="loginButton py-5 px-14 font-inter font-bold text-xl">
+        <button class="loginButton py-5 px-14 font-inter font-bold text-xl" (click)="OnSubmit()">
           Iniciar Sesión
-        </button>
+        </button >
       </div>
     </div>
   </div>

@@ -41,5 +41,16 @@ export const routes: Routes = [
         (m) => m.CarritoPage
       ),
   },
+  {
+    path:'metodopago',
+    loadComponent: () =>
+      import('./features/metodopago/metodopago.page').then(
+        (m) => m.MetodopagoPage
+      ),
+  },  {
+    path: 'item-upload',
+    loadComponent: () => import('./features/item-upload/item-upload.page').then( m => m.ItemUploadPage)
+  },
+
 
 ];
