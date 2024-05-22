@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'registrar',
+    redirectTo: 'inicio',
     pathMatch: 'full',
   },
   {
@@ -35,22 +35,22 @@ export const routes: Routes = [
       ),
   },
   {
-    path:'carrito',
+    path: 'carrito',
     loadComponent: () =>
-      import('./features/carrito/carrito.page').then(
-        (m) => m.CarritoPage
-      ),
+      import('./features/carrito/carrito.page').then((m) => m.CarritoPage),
   },
   {
-    path:'metodopago',
+    path: 'metodopago',
     loadComponent: () =>
       import('./features/metodopago/metodopago.page').then(
         (m) => m.MetodopagoPage
       ),
-  },  {
-    path: 'item-upload',
-    loadComponent: () => import('./features/item-upload/item-upload.page').then( m => m.ItemUploadPage)
   },
-
-
+  {
+    path: 'item-upload',
+    loadComponent: () =>
+      import('./features/item-upload/item-upload.page').then(
+        (m) => m.ItemUploadPage
+      ),
+  },
 ];

@@ -1,30 +1,52 @@
-import { ApplicationConfig, importProvidersFrom } from "@angular/core";
-import { provideRouter } from "@angular/router";
-import { routes } from "./app.routes";
-import { provideAnimations } from "@angular/platform-browser/animations";
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import {
-  provideAnalytics, getAnalytics, ScreenTrackingService,
-  UserTrackingService
-} from "@angular/fire/analytics";
-import { provideFirebaseApp, initializeApp, getApp } from "@angular/fire/app";
+  provideAnalytics,
+  getAnalytics,
+  ScreenTrackingService,
+  UserTrackingService,
+} from '@angular/fire/analytics';
+import { provideFirebaseApp, initializeApp, getApp } from '@angular/fire/app';
 import {
-  provideAuth, initializeAuth, browserSessionPersistence,
-  indexedDBLocalPersistence, browserPopupRedirectResolver,
-  connectAuthEmulator
-} from "@angular/fire/auth";
-import { provideFirestore, initializeFirestore, connectFirestoreEmulator, getFirestore } from "@angular/fire/firestore";
-import { provideFunctions, getFunctions, connectFunctionsEmulator } from "@angular/fire/functions";
+  provideAuth,
+  initializeAuth,
+  browserSessionPersistence,
+  indexedDBLocalPersistence,
+  browserPopupRedirectResolver,
+  connectAuthEmulator,
+} from '@angular/fire/auth';
+import {
+  provideFirestore,
+  initializeFirestore,
+  connectFirestoreEmulator,
+  getFirestore,
+} from '@angular/fire/firestore';
+import {
+  provideFunctions,
+  getFunctions,
+  connectFunctionsEmulator,
+} from '@angular/fire/functions';
 
-import { providePerformance, getPerformance } from "@angular/fire/performance";
-import { provideStorage, getStorage, connectStorageEmulator } from "@angular/fire/storage";
+import { providePerformance, getPerformance } from '@angular/fire/performance';
+import {
+  provideStorage,
+  getStorage,
+  connectStorageEmulator,
+} from '@angular/fire/storage';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar'; //
-import {environment} from '../environments/environment';
+import { environment } from '../environments/environment';
+import { enableProdMode } from '@angular/core';
 
-
+if (environment.production) {
+  enableProdMode();
+} else {
+  console.log('Development mode: Angular is running in development mode.');
+}
 const useEmulators = environment.firebase;
 
 export const appConfig: ApplicationConfig = {
-
   providers: [
     provideRouter(routes),
     provideAnimations(),
@@ -36,28 +58,32 @@ export const appConfig: ApplicationConfig = {
           persistence: useEmulators
             ? browserSessionPersistence
             : indexedDBLocalPersistence,
-          popupRedirectResolver: browserPopupRedirectResolver
+          popupRedirectResolver: browserPopupRedirectResolver,
         });
 
-        if (location.hostname === "localhost:8080") {
-          connectAuthEmulator(auth, "http://127.0.0.1:9099");
+        if (location.hostname === 'localhost:8080') {
+          connectAuthEmulator(auth, 'http://127.0.0.1:9099');
         }
 
         return auth;
       }),
       provideFirestore(() => {
-        const firestore = initializeFirestore(getApp(), {
-          experimentalForceLongPolling: useEmulators ? true : false
+        let firestore;
+        try {
+          firestore = getFirestore();
+        } catch (e) {
+          firestore = initializeFirestore(getApp(), {
+            experimentalForceLongPolling: useEmulators ? true : false,
+          });
 
-        });
-
-        if (useEmulators) {
-          connectFirestoreEmulator(firestore, 'localhost', 8080)
+          if (useEmulators) {
+            connectFirestoreEmulator(firestore, 'localhost', 8080);
+          }
         }
 
         return firestore;
       }),
-      provideFirestore(() => getFirestore()),
+
       provideFunctions(() => {
         const functions = getFunctions();
 
@@ -67,8 +93,7 @@ export const appConfig: ApplicationConfig = {
 
         return functions;
       }),
-       // not using emulators for messages
-      providePerformance(() => getPerformance()), // not using emulators for checking app performance
+      providePerformance(() => getPerformance()),
       provideStorage(() => {
         const storage = getStorage();
 
@@ -86,8 +111,8 @@ export const appConfig: ApplicationConfig = {
       useValue: {
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
-        duration: 4000
-      }
-    }
-  ]
-}
+        duration: 4000,
+      },
+    },
+  ],
+};
