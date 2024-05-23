@@ -5,7 +5,7 @@
       *ngFor="let key of keys | async"
       class="flex max-w-md bg-neutralGray shadow-lg shadow-darkGray rounded-lg overflow-hidden mb-10"
     >
-      <div class="w-1/2 bg-cover">
+      <div class="w-1/2 h-full">
         <img [src]="key.image" alt="{{ key.name }}" />
       </div>
       <div class="w-2/3 p-3">
@@ -20,6 +20,7 @@
           <h1 class="text-anaranjado font-bold text-xl">$ {{ key.price }}</h1>
           <button
             class="px-3 py-2 bg-anaranjado text-white text-xs font-bold rounded"
+            (click)="AddToShopyCar(key.id)"
           >
             Agregar al Carrito
           </button>

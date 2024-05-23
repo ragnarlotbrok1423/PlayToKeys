@@ -1,15 +1,25 @@
-import {Inject, Injectable} from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Inject, Injectable } from '@angular/core';
+import {
+  Auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from '@angular/fire/auth';
 import { initializeApp } from 'firebase/app';
-import { getAuth} from 'firebase/auth';
-import { getFirestore,collection, addDoc, doc, setDoc } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  doc,
+  setDoc,
+} from 'firebase/firestore';
 
 import { environment } from 'src/environments/environment';
-import {Firestore} from "@angular/fire/firestore";
+import { Firestore } from '@angular/fire/firestore';
 
-import{UserI} from '../models/user.interface';
-import {User} from'firebase/auth';
-
+import { UserI } from '../models/user.interface';
+import { User } from 'firebase/auth';
+import { FirebaseService } from './firebase.service';
 // Initialize Firebase
 const app = initializeApp(environment.firebase);
 const firestore = getFirestore(app);
@@ -18,8 +28,6 @@ const firestore = getFirestore(app);
   providedIn: 'root',
   // Marking AuthService as standalone
   // Use the imported auth directly
-
-
 })
 export class AuthService {
   auth: Auth;
@@ -27,8 +35,7 @@ export class AuthService {
   authenticated: boolean = false;
   userDetails: User | null = null;
 
-  constructor() {
-
+  constructor(private firebaseService: FirebaseService) {
     this.auth = getAuth(app);
     this.firestore = firestore;
     this.auth.onAuthStateChanged((user) => {
@@ -50,14 +57,19 @@ export class AuthService {
         reject(new Error('Geolocation is not supported by this browser.'));
       }
     });
-
   }
 
   get currentUserId(): string {
     return this.authenticated ? this.userDetails?.uid : '';
   }
 
-  registrar(email: string, password: string, nombre: string, apellido: string, codigoPostal: number) {
+  registrar(
+    email: string,
+    password: string,
+    nombre: string,
+    apellido: string,
+    codigoPostal: number
+  ) {
     return createUserWithEmailAndPassword(this.auth, email, password)
       .then((userCredential) => {
         // User successfully registered
@@ -68,7 +80,7 @@ export class AuthService {
           uid: uid,
           nombre: nombre,
           apellido: apellido,
-          codigoPostal: codigoPostal
+          codigoPostal: codigoPostal,
         };
 
         const userRef = doc(collection(firestore, 'users'), uid);
@@ -91,11 +103,17 @@ export class AuthService {
 
   async logIn(email: string, password: string) {
     try {
-      const result = await signInWithEmailAndPassword(this.auth, email, password);
+      const result = await signInWithEmailAndPassword(
+        this.auth,
+        email,
+        password
+      );
     } catch (error) {
       console.error('Error logging in:', error);
       throw error;
     }
-
+  }
+  async logout() {
+    return this.auth.signOut();
   }
 }

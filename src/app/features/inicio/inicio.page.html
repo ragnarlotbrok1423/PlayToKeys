@@ -9,9 +9,15 @@
     <button class="py-3 px-5 bg-anaranjado rounded-3xl">
       <img src="../../../assets/dollar.svg" alt="" />
     </button>
-    <app-orange-button>Registrar Key</app-orange-button>
+    <app-orange-button
+      [routerLink]="['/item-upload']"
+      routerLinkActive="router-link-active"
+      >Registrar Key</app-orange-button
+    >
 
-    <app-orange-button>Ver Carrito</app-orange-button>
+    <app-orange-button [routerLink]="['/carrito']"
+      >Ver Carrito</app-orange-button
+    >
   </div>
   <div>
     <app-key-card></app-key-card>

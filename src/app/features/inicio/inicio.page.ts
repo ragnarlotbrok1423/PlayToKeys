@@ -10,7 +10,7 @@ import {
 import { HeaderComponent } from './header/header.component';
 import { KeyCardComponent } from './key-card/key-card.component';
 import { OrangeButtonComponent } from './orange-button/orange-button.component';
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -26,6 +26,7 @@ import { OrangeButtonComponent } from './orange-button/orange-button.component';
     HeaderComponent,
     KeyCardComponent,
     OrangeButtonComponent,
+    RouterLink,
   ],
 })
 export class InicioPage implements OnInit {
