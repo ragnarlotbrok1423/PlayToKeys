@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "playtokeys": {
+      "hosting": {
+        "app": [
+          "playtokeys"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "playtokeys"
+  }
+}

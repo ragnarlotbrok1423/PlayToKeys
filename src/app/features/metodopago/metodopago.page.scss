@@ -1,0 +1,119 @@
+ion-content{
+    --background: #33312E;
+    
+  }
+  ion-label{
+    color: #ffffff
+  }
+  .form-row {
+    overflow: hidden;
+  }
+  .slide-in-out {
+    display: block;
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .slide-in-out.slide-out {
+    transform: translateX(-100%);
+  }
+  
+.payment-container {
+        .payment-header {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          padding: 10px;
+          border-radius: 5px;
+          color: #33312E; /* Color del texto */
+
+          margin-bottom: 10px; /* Margen inferior */
+          font-size: 16px; /* Tamaño de la letra */
+          transition: background-color 0.3s ease; /* Transición de color de fondo */
+        }
+      
+        .payment-header.active {
+          background-color: #33312E; /* Color de fondo activo */
+        }
+      
+        .payment-header {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          padding: 10px;
+          border-radius: 5px;
+          color: #33312E;
+          margin-bottom: 10px;
+          font-size: 16px;
+          transition: background-color 0.3s ease; /* Transición de color de fondo */
+        
+          &.active {
+            background-color: #33312E; /* Color de fondo activo */
+          }
+        
+          i {
+            margin-right: 10px;
+            font-size: 24px;
+          }
+        }
+        
+
+    .payment-form {
+      background-color: #000000;
+    
+      padding: 20px;
+      margin-top: 20px;
+        
+      .form-row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+  
+        ion-label {
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
+  
+        ion-input {
+          --color: #000000;
+          --background: #FFFCF2;
+          --border-radius: 10px;
+          --padding-start: 10px;
+          --padding-end: 10px;
+        }
+        .form-row {
+  overflow: hidden;
+}
+      }
+      .button-container {
+        margin-top: auto; /* Empuja el contenedor del botón hacia abajo */
+        width: calc(375px / 4); /* 1/4 del ancho del contenedor */
+      }
+      .confirm-button {
+        color: #fffbfb;
+        background: #EB5E28; /* Color de fondo */
+        border-radius: 10px; /* Redondeado */
+        border-width: 10px; /* Grosor del borde */
+        border-color: #EB5E28; /* Color del borde */
+      }
+      
+    }
+  }
+  
+  .back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #EB5E28;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    z-index: 1000; /* Para mantener siempre adelante */
+  }

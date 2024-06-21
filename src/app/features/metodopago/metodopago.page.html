@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Metodo de Pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Metodo de Pago</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="payment-container">
+    <div class="payment-header">
+      <h2 style="color: #ffffff">Tarjeta de crédito o débito</h2>
+    </div>
+    <div class="payment-form">
+      <div class="form-row">
+        <ion-label>Número de tarjeta</ion-label>
+        <input
+          type="text"
+          class="rounded-2xl font-inter font-medium text-anaranjado text-lg"
+          [(ngModel)]="numTarjeta"
+        />
+      </div>
+
+      <div class="form-row">
+        <ion-label>Fecha de expiración</ion-label>
+        <input
+          type="text"
+          class="rounded-2xl font-inter font-medium text-anaranjado text-lg"
+          [(ngModel)]="fechaExpiracion"
+        />
+      </div>
+      <div class="form-row">
+        <ion-label>CVV</ion-label>
+        <input
+          type="password"
+          class="rounded-2xl font-inter font-medium text-anaranjado text-lg"
+          [(ngModel)]="cvv"
+        />
+      </div>
+      <div class="form-row">
+        <ion-label>Titular de la tarjeta</ion-label>
+        <input
+          type="text"
+          class="rounded-2xl font-inter font-medium text-anaranjado text-lg"
+          [(ngModel)]="propietario"
+        />
+      </div>
+      <div class="button-container">
+        <ion-button
+          class="confirm-button"
+          color="primary"
+          (click)="confirmPayment()"
+          >Confirmar</ion-button
+        >
+      </div>
+    </div>
+  </div>
+
+  <button class="back-button" [routerLink]="['/carrito']">Atrás</button>
+</ion-content>

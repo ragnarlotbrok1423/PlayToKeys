@@ -1,0 +1,102 @@
+<div>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>tu carrito de compra </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="flex justify-end mt-3 mr-3.5">
+    <div
+      class="bg-white border-b-anaranjado border-b-4 border-r-anaranjado border-r-4 rounded-[21px] flex justify-center"
+      routerLink="/inicio"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-arrow-back-up mx-3 my-1"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        stroke-width="2.5"
+        stroke="#EB5E28"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M9 14l-4 -4l4 -4" />
+        <path d="M5 10h11a4 4 0 1 1 0 8h-1" />
+      </svg>
+    </div>
+  </div>
+  <div *ngIf="carItems.length > 0">
+    <ion-card *ngFor="let item of carItems ">
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <!-- Primera columna -->
+            <ion-col size="4" class="image-icon-container">
+              <!-- Contenido de la primera columna -->
+              <img [src]=" item.image " class="card-image-icon" />
+            </ion-col>
+
+            <!-- Segunda columna -->
+            <ion-col size="8">
+              <!-- Contenido de la segunda columna -->
+              <ion-card-header>
+                <ion-row>
+                  <ion-card-title class="text-xl font-inter font-bold">
+                    {{item.name}}
+                  </ion-card-title>
+                </ion-row>
+                <ion-row>
+                  <ion-card-subtitle class="text-sm font-inter font-medium">
+                    {{item.category}}
+                  </ion-card-subtitle>
+                </ion-row>
+              </ion-card-header>
+              <ion-card-content class="text-lg font-inter font-bold"
+                >$ {{item.price}}
+              </ion-card-content>
+              <div class="flex justify-end mt-2">
+                <button
+                  class="font-inter font-semibold text-center text-lg text-white bg-anaranjado rounded-2xl block px-10 py-2"
+                  (click)="presentAlert(item.id)"
+                >
+                  Quitar Producto
+                </button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div
+    class="flex justify-center bg-neutralGray rounded-xl mx-10 mt-32"
+    *ngIf="carItems.length === 0"
+  >
+    <div class="px-8 py-10">
+      <h1 class="font-inter font-bold text-4xl text-anaranjado text-center">
+        Se te Nota Que...
+      </h1>
+      <p class="font-inter font-semibold text-xl text-white text-center mt-5">
+        No tienes nada Agregado al Carrito, porque no revisas nuestro catalogo
+        de Keys
+      </p>
+    </div>
+  </div>
+  <div class="fixed bottom-0 left-0 z-50 w-full h-16 bg-neutralGray">
+    <div class="flex justify-center gap-7">
+      <button
+        [disabled]="carItems.length === 0"
+        class="bg-white rounded-2xl font-inter font-bold text-xl text-anaranjado px-7 py-2 mt-2"
+        [routerLink]="['/metodopago']"
+      >
+        Comprar
+      </button>
+      <h1 class="font-inter font-bold text-xl text-anaranjado mt-4">
+        Total: {{totalPrice | currency}}
+      </h1>
+    </div>
+  </div>
+</div>

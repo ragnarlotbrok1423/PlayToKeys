@@ -1,0 +1,31 @@
+<div>
+  <!-- component -->
+  <div class="mx-6 rounded-3xl py-4">
+    <div
+      *ngFor="let key of keys | async"
+      class="flex max-w-md bg-neutralGray shadow-lg shadow-darkGray rounded-lg overflow-hidden mb-10"
+    >
+      <div class="w-1/2 h-full">
+        <img [src]="key.image" alt="{{ key.name }}" />
+      </div>
+      <div class="w-2/3 p-3">
+        <h1 class="text-white font-bold text-2xl">{{ key.name }}</h1>
+        <p class="font-inter font-extralight text-sm">{{ key.category }}</p>
+        <p class="font-inter font-light text-sm my-2">
+          {{ key.developerName }}
+        </p>
+        <p class="mt-2 text-white text-sm">{{ key.description }}</p>
+
+        <div class="flex item-center justify-between mt-6">
+          <h1 class="text-anaranjado font-bold text-xl">$ {{ key.price }}</h1>
+          <button
+            class="px-3 py-2 bg-anaranjado text-white text-xs font-bold rounded"
+            (click)="AddToShopyCar(key.id)"
+          >
+            Agregar al Carrito
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,153 @@
+<div class="overflow-auto">
+  <!--This is the Header of this page-->
+  <div class="flex justify-center gap-10 mt-16">
+    <h1 class="font-bold font-inter text-4xl">Seller View</h1>
+    <div
+      class="bg-white border-b-anaranjado border-b-4 border-r-anaranjado border-r-4 rounded-[21px] my-auto"
+      routerLink="/inicio"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-arrow-back-up mx-5 my-1.5"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        stroke-width="2.5"
+        stroke="#EB5E28"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M9 14l-4 -4l4 -4" />
+        <path d="M5 10h11a4 4 0 1 1 0 8h-1" />
+      </svg>
+    </div>
+  </div>
+  <!--here begin the body of this page-->
+  <!--Nombre del juego-->
+  <div class="mt-16">
+    <div class="bg-anaranjado rounded-r-[20px] py-3 mr-28">
+      <h1 class="font-inter font-semibold text-white text-2xl ml-5">
+        Nombre del Juego
+      </h1>
+    </div>
+    <div class="mt-10 flex justify-end mr-5">
+      <input
+        type="text"
+        class="bg-white font-inter font-semibold text-anaranjado text-xl border-b-4 border-b-anaranjado border-r-4 border-r-anaranjado rounded-xl w-80"
+        [(ngModel)]="nombre"
+      />
+    </div>
+  </div>
+  <!--Descripcion-->
+  <div class="mt-10">
+    <div class="bg-anaranjado rounded-r-[20px] py-3 mr-28">
+      <h1 class="font-inter font-semibold text-white text-2xl ml-5">
+        Descripción
+      </h1>
+    </div>
+    <div class="mt-10 flex justify-end mr-5">
+      <textarea
+        name="descripcion"
+        id="descripcion"
+        class="bg-white font-inter font-semibold text-anaranjado text-xl border-b-4 border-b-anaranjado border-r-4 border-r-anaranjado rounded-xl w-80"
+        rows="7"
+        style="resize: none"
+        [(ngModel)]="descripcion"
+      >
+      </textarea>
+    </div>
+    <!--Tags-->
+    <div class="mt-10">
+      <div class="bg-anaranjado rounded-r-[20px] py-3 mr-28">
+        <h1 class="font-inter font-semibold text-white text-2xl ml-5">Tags</h1>
+      </div>
+      <div class="mt-10 flex justify-end mr-5">
+        <select
+          name="tag"
+          id="tag"
+          class="bg-white font-inter font-semibold text-anaranjado text-xl border-b-4 border-b-anaranjado border-r-4 border-r-anaranjado rounded-xl w-80"
+          [(ngModel)]="tags"
+        >
+          <option value="PLAYSTATION">PLAYSTATION</option>
+          <option value="XBOX">XBOX</option>
+          <option value="PC">PC</option>
+          <option value="NINTENDO">NINTENDO</option>
+        </select>
+      </div>
+    </div>
+    <!--Estudio Desarrollador-->
+
+    <div class="mt-10">
+      <div class="bg-anaranjado rounded-r-[20px] py-3 mr-28">
+        <h1 class="font-inter font-semibold text-white text-2xl ml-5">
+          Estudio Desarrollador
+        </h1>
+      </div>
+
+      <div class="mt-10 flex justify-end mr-5">
+        <input
+          type="text"
+          class="bg-white font-inter font-semibold text-anaranjado text-xl border-b-4 border-b-anaranjado border-r-4 border-r-anaranjado rounded-xl w-80"
+          [(ngModel)]="developer"
+        />
+      </div>
+    </div>
+    <!--Precio-->
+    <div class="mt-10">
+      <div class="bg-anaranjado rounded-r-[20px] py-3 mr-28">
+        <h1 class="font-inter font-semibold text-white text-2xl ml-5">
+          Precio
+        </h1>
+      </div>
+      <div class="mt-10 flex justify-end mr-5">
+        <input
+          type="text"
+          class="bg-white font-inter font-semibold text-anaranjado text-xl border-b-4 border-b-anaranjado border-r-4 border-r-anaranjado rounded-xl w-80"
+          [(ngModel)]="precio"
+        />
+      </div>
+    </div>
+    <!--Clave-->
+    <div class="mt-10">
+      <div class="bg-anaranjado rounded-r-[20px] py-3 mr-28">
+        <h1 class="font-inter font-semibold text-white text-2xl ml-5">Clave</h1>
+      </div>
+      <div class="mt-10 flex justify-end mr-5">
+        <input
+          type="text"
+          class="bg-white font-inter font-semibold text-anaranjado text-xl border-b-4 border-b-anaranjado border-r-4 border-r-anaranjado rounded-xl w-80"
+          [(ngModel)]="clave"
+        />
+      </div>
+    </div>
+    <!--Imagen-->
+    <div class="mt-10">
+      <div class="bg-anaranjado rounded-r-[20px] py-3 mr-28">
+        <h1 class="font-inter font-semibold text-white text-2xl ml-5">
+          URL imagen
+        </h1>
+      </div>
+      <div class="mt-10 flex justify-end mr-5">
+        <label
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          for="file_input"
+        ></label>
+        <input
+          class="bg-white font-inter font-semibold text-anaranjado text-lg border-b-4 border-b-anaranjado border-r-4 border-r-anaranjado rounded-xl w-80"
+          type="text"
+          [(ngModel)]="imagen"
+        />
+      </div>
+      <div class="mt-5 flex justify-center">
+        <button
+          class="bg-white font font-bold text-black text-3xl rounded-2xl py-3 px-10 mt-5 mb-5"
+          (click)="UploadKey()"
+        >
+          Registrar Clave
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+
+ion-content {
+    --background: #252422;
+}
+.registerRedirect{
+    border-radius: 10px;
+    background: #868179;
+
+}
+
+.OrangeContainer{
+    background-color: #EB5E28;
+    border-radius: 0px 40px 40px 0px;
+
+    height: 80vh;
+}
+
+.loginButton{
+    border-radius: 20px 0px 0px 20px;
+    background: #000;
+}
+
+.loginTextBox{
+  border-radius: 10px;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  border-bottom: 3px solid #FFF;
+  border-left: 3px solid #FFF;
+  background: rgba(217, 217, 217, 0.00);
+  width: 270px;
+  height: 40px;
+  margin: 0;
+}

@@ -1,0 +1,66 @@
+<ion-content>
+  <div>
+    <div class="flex justify-center gap-4 mt-16">
+      <img src="../../../assets/playToKeyLogo.png" alt="playToKeyLogo" class="w-40">
+      <button class="px-5 py-3 registerRedirect inline-flex items-center bg-lightGray rounded-2xl">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="29"
+          viewBox="0 0 19 18"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_4_10)">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M1.1875 12.9374C1.1875 13.0866 1.25006 13.2297 1.36141 13.3351C1.47276 13.4406 1.62378 13.4999 1.78125 13.4999H15.7854L12.0484 17.0392C11.9369 17.1448 11.8743 17.288 11.8743 17.4374C11.8743 17.5868 11.9369 17.73 12.0484 17.8357C12.1599 17.9413 12.3111 18.0006 12.4688 18.0006C12.6264 18.0006 12.7776 17.9413 12.8891 17.8357L17.6391 13.3357C17.6944 13.2834 17.7383 13.2213 17.7682 13.153C17.7982 13.0847 17.8136 13.0114 17.8136 12.9374C17.8136 12.8634 17.7982 12.7902 17.7682 12.7218C17.7383 12.6535 17.6944 12.5914 17.6391 12.5392L12.8891 8.03915C12.7776 7.93353 12.6264 7.87419 12.4688 7.87419C12.3111 7.87419 12.1599 7.93353 12.0484 8.03915C11.9369 8.14477 11.8743 8.28803 11.8743 8.4374C11.8743 8.58677 11.9369 8.73003 12.0484 8.83565L15.7854 12.3749H1.78125C1.62378 12.3749 1.47276 12.4342 1.36141 12.5397C1.25006 12.6451 1.1875 12.7882 1.1875 12.9374ZM17.8125 5.0624C17.8125 5.21159 17.7499 5.35466 17.6386 5.46015C17.5272 5.56564 17.3762 5.6249 17.2188 5.6249H3.21456L6.95163 9.16415C7.00683 9.21645 7.05062 9.27854 7.0805 9.34687C7.11037 9.4152 7.12575 9.48844 7.12575 9.5624C7.12575 9.63636 7.11037 9.7096 7.0805 9.77793C7.05062 9.84626 7.00683 9.90835 6.95163 9.96065C6.89642 10.0129 6.83088 10.0544 6.75876 10.0827C6.68663 10.111 6.60932 10.1256 6.53125 10.1256C6.45318 10.1256 6.37587 10.111 6.30375 10.0827C6.23162 10.0544 6.16608 10.0129 6.11088 9.96065L1.36088 5.46065C1.30558 5.4084 1.26171 5.34633 1.23178 5.27799C1.20185 5.20965 1.18644 5.13639 1.18644 5.0624C1.18644 4.98841 1.20185 4.91515 1.23178 4.84681C1.26171 4.77847 1.30558 4.7164 1.36088 4.66415L6.11088 0.164151C6.22237 0.0585284 6.37358 -0.000809669 6.53125 -0.000809669C6.68892 -0.000809669 6.84014 0.0585284 6.95163 0.164151C7.06312 0.269773 7.12575 0.413028 7.12575 0.562401C7.12575 0.711774 7.06312 0.855028 6.95163 0.960651L3.21456 4.4999H17.2188C17.3762 4.4999 17.5272 4.55916 17.6386 4.66465C17.7499 4.77014 17.8125 4.91322 17.8125 5.0624Z"
+              fill="white"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_4_10">
+              <rect width="30" height="29" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        <span class="ml-2 font-inter font-bold text-xl">Iniciar Sesión</span>
+      </button>
+
+    </div>
+
+    <div class="bg-white rounded-l-2xl mt-16 ml-10">
+      <div class="pl-10 p-8">
+        <form [formGroup]="form"  >
+          <h1  class=" font-semibold text-black text-2xl mb-5">Nombre</h1>
+          <app-textbox-1   formControlName="nombre" class="mb-5"></app-textbox-1>
+
+          <h1 class=" font-semibold text-black text-2xl mb-5"> Apellido </h1>
+          <app-textbox-1 formControlName="apellido"></app-textbox-1>
+
+          <h1 class=" font-semibold text-black text-2xl mb-5" >Código Postal</h1>
+          <app-textbox-1   formControlName="zipCode"></app-textbox-1>
+
+          <h1 class=" font-semibold text-black text-2xl mb-5">Correo</h1>
+          <app-textbox-1  formControlName="email"></app-textbox-1>
+
+          <h1 class=" font-semibold text-black text-2xl mb-5" >Contraseña</h1>
+          <app-textbox-1  formControlName="password"></app-textbox-1>
+
+        </form>
+      </div>
+
+      <button class="bg-black rounded-r-full py-4 px-16 mb-6"  (click)="onSubmit()">
+        <label class="font-inter font-bold text-white text-2xl">Registrarse</label>
+      </button>
+    </div>
+
+
+
+
+
+  </div>
+</ion-content>
+
+
+
